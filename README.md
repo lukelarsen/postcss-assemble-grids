@@ -226,42 +226,42 @@ See more information under 'Options'.
 ```
 
 ### Options
-##### assemble-grid
+#### assemble-grid
 assemble-grid will set options for all the cells in a grid at once. It should always be used when using Assemble Grid. It builds the base for your grid.
-Options for 'assemble-grid' are as follows:
+Options for 'assemble-grid' are as follows:<br>
 assemble-grid: *Cell Width*, *Gutter Width*, *Grid Width/Center*, *Cell Alignment*, *Box Sizing*
 
-###### Cell Width (required)
+##### Cell Width (required)
 This will set the width of all the cells in your grid. Cell Width can be any of the following:
 - Fraction (ex. 1/4)
 - Number Value (ex. 320px)
 - 'fit' (This will fit all cells in a single row.)
 
-###### Gutter Width (optional)
+##### Gutter Width (optional)
 This will set the size of the gutters in your grid. Gutter Width can only be:
 - Number Value (ex 30px)
 
-###### Grid Width/Center (optional)
+##### Grid Width/Center (optional)
 This will give the grid a set width and center it. Grid Width/Center can only be:
 - Number Value (ex 850px)
 
-###### Cell Alignment (optional)
+##### Cell Alignment (optional)
 This will set the alignment of each cell in the grid. Cell Alignment can be any of the following:
 - top
 - bottom
 - center
 
-###### Box Sizing (optional)
+##### Box Sizing (optional)
 This will add the needed box-sizing: border-box; to each grid cell. Many people prefer this to be included on everyhting with *. If you do not use this on everything you must set this to true. Box Sizing can be:
 - true
 - false
 
-###### Not setting some options
+##### Not setting some options
 If you would like to set an option but leave the option before it blank you can do so like this:
 assemble-grid: 1/4 _ 800px;
 This would set a grid cell width of 25%, no gutters (the '_'), and a fixed grid width of 800px.
 
-##### assemble-cell
+#### assemble-cell
 assemble-cell will allow you to change the behavior of a single grid cell. Let's say you used assemble-grid like this:
 ```css
 .grid{
@@ -278,24 +278,24 @@ This makes all the cells in your grid 25% with 30px gutters. Now lets say you wa
 
 This would override the 25% declaration from assemble-grid and make just this cell 50%.
 
-Options for 'assemble-cell' are as follows:
+Options for 'assemble-cell' are as follows:<br>
 assemble-cell: *Cell Width*, *Cell Alignment*
 
-###### Cell Width (optional)
+##### Cell Width (optional)
 This will set the width of only this cell. Cell Width can be any of the following:
 - Fraction (ex. 1/4)
 - Number Value (ex. 320px)
 
-###### Cell Alignment (optional)
+##### Cell Alignment (optional)
 This will set the alignment of only this cell. Cell Alignment can be any of the following:
 - top
 - bottom
 - center
 
-###### Both are optional?
+##### Both are optional?
 Yes, both are optional but you will need at least one of these options when using assemble-cell.
 
-##### assemble-mq-grid
+#### assemble-mq-grid
 Using assemble-mq-grid is for when you need to change the behavior of a grid in a media query. Instead of re-writing all the css for the grid we only override the parts that need changing.
 Assemble Grid leaves defining the media queries up to you. A great plugin for this is [PostCSS Custom Media].
 After you have defined a media query you can use it like this:
@@ -310,40 +310,40 @@ After you have defined a media query you can use it like this:
 
 This would change the grid to have 50% cell widths and 20px gutters within the given media query.
 
-Options for 'assemble-mq-grid' are as follows:
+Options for 'assemble-mq-grid' are as follows:<br>
 assemble-mq-grid: *Cell Width*, *Gutter Width*, *Grid Width/Center*, *Cell Alignment*
 
-###### Cell Width (optional)
+##### Cell Width (optional)
 This will set the width of all the cells in your grid. Cell Width can be any of the following:
 - Fraction (ex. 1/4)
 - Number Value (ex. 320px)
 - 'fit' (This will fit all cells in a single row.)
 
-###### Gutter Width (optional)
+##### Gutter Width (optional)
 This will set the size of the gutters in your grid. Gutter Width can only be:
 - Number Value (ex 30px)
 
-###### Grid Width/Center (optional)
+##### Grid Width/Center (optional)
 This will give the grid a set width and center it. Grid Width/Center can only be:
 - Number Value (ex 850px)
 
-###### Cell Alignment (optional)
+##### Cell Alignment (optional)
 This will set the alignment of each cell in the grid. Cell Alignment can be an of the following:
 - top
 - bottom
 - center
 
-###### Everything is optional?
+##### Everything is optional?
 Yes, everything is optional but you will need at least one of these options when using assemble-mq-grid.
 
-###### What about assemble-mq-cell?
+##### What about assemble-mq-cell?
 What if you want to modifiy a single cell in a media query? When modifing a single cell have to override everything that assemble-cell generates so there is no need for a assemble-mq-cell. Just use assemble-cell within a media query and you are good to go.
 
-##### Nesting
+#### Nesting
 Nesting just works. You can next as many grids as you want. With a lot of grid systems you have to nest to achieve what you can probably do with assemble-cell. Check to see if you can accomplish what you need with asseble-cell before you start nesting.
 To nest you just need to place another assemble-grid inside a single cell.
 
-##### Extra Info
+#### Extra Info
 While not a requirement it is recommended that when you are creating markup for your grids you only apply assemble-grid, assemble-cell, and assemble-mq-grid to a specific html tag. If you need to add style, such as background-color (or anything else), you should do that on a differnt tag withing your grid markup. This will help keep things organized and allow you to re-use your gird classes with out visual style getting in the way. Again, this is just advice. It is not required.
 
 
