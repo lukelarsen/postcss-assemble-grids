@@ -189,7 +189,7 @@ body{
 ## Usage
 
 ```
-npm install postcss-assemble-grid --save-dev
+npm install postcss-assemble-grids --save-dev
 ```
 
 ### Gulp
