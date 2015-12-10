@@ -262,7 +262,7 @@ module.exports = postcss.plugin('assemble-grid', function (options) {
                     var firstValueTest = parseInt(valueArray[0].replace(/[^0-9\.]+/g, ''));
 
                     if (valueArray[0] == '_') {
-                        console.log('hi');
+
                     } else if (isNaN(firstValueTest)) {
                         if (valueArray[0] == 'fit') {
 
