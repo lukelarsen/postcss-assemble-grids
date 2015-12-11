@@ -21,7 +21,7 @@ module.exports = postcss.plugin('assemble-grid', function (options) {
                 /////////////////////////
                 ///// assemble-grid /////
                 /////////////////////////
-                if (property.indexOf('assemble-grid') !== -1) {
+                if (property.match(/^assemble-grid$/gi) !== null) {
 
                     ///// Check all options to see if they are valid.
 
@@ -191,16 +191,16 @@ module.exports = postcss.plugin('assemble-grid', function (options) {
                 }
             });
 
-            /////////////////////////
-            ///// assemble-cell /////
-            /////////////////////////
+            //////////////////////////////
+            ///// assemble-grid-cell /////
+            //////////////////////////////
             rule.walkDecls(function (decl, i) {
                 var value = decl.value,
                     valueArray = value.split(' '),
                     property = decl.prop,
                     calcPercent;
 
-                if (property.indexOf('assemble-cell') !== -1) {
+                if (property.match(/^assemble-grid-cell$/gi) !== null) {
 
                     // Detect if 1st value exists and is a fraction or number value.
                     // The first value set the width of a single grid cell.
@@ -246,14 +246,14 @@ module.exports = postcss.plugin('assemble-grid', function (options) {
             });
 
             ////////////////////////////
-            ///// assemble-mq-grid /////
+            ///// assemble-grid-mq /////
             ////////////////////////////
             rule.walkDecls(function (decl, i) {
                 var value = decl.value,
                     valueArray = value.split(' '),
                     property = decl.prop;
 
-                if (property.indexOf('assemble-mq-grid') !== -1) {
+                if (property.match(/^assemble-grid-mq$/gi) !== null) {
 
                     ///// Check all options to see if they are valid.
 

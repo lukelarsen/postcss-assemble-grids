@@ -73,7 +73,7 @@ body{
 }
 
 .frame-cell--sidebar{
-    assemble-cell: 350px;
+    assemble-grid-cell: 350px;
 }
 
 .grid{
@@ -82,12 +82,12 @@ body{
 
 @media all and (max-width: 750px) and (min-width: 200px) {
     .grid{
-        assemble-mq-grid: 1/1 20px;
+        assemble-grid-mq: 1/1 20px;
     }
 }
 
 .grid__cell--half{
-    assemble-cell: 1/2 bottom;
+    assemble-grid-cell: 1/2 bottom;
 }
 
 /* For example only. */
@@ -262,8 +262,8 @@ assemble-grid: 1/4 _ 800px;
 This would set a grid cell width of 25%, no gutters (the '_'), and a fixed grid width of 800px.
 
 <br><br>
-#### *assemble-cell*
-assemble-cell will allow you to change the behavior of a single grid cell. Let's say you used assemble-grid like this:
+#### *assemble-grid-cell*
+assemble-grid-cell will allow you to change the behavior of a single grid cell. Let's say you used assemble-grid like this:
 ```css
 .grid{
     assemble-grid: 1/4 30px;
@@ -272,15 +272,15 @@ assemble-cell will allow you to change the behavior of a single grid cell. Let's
 
 This makes all the cells in your grid 25% with 30px gutters. Now lets say you want one cell in that grid to be 1/2. On that cell add this:
 ```css
-.grid-cell{
-    assemble-cell: 1/2;
+.grid-cell-half{
+    assemble-grid-cell: 1/2;
 }
 ```
 
 This would override the 25% declaration from assemble-grid and make just this cell 50%.
 
-Options for 'assemble-cell' are as follows:<br>
-assemble-cell: *Cell Width*, *Cell Alignment*
+Options for 'assemble-gird-cell' are as follows:<br>
+assemble-grid-cell: *Cell Width*, *Cell Alignment*
 
 ##### Cell Width (optional)
 This will set the width of only this cell. Cell Width can be any of the following:
@@ -297,23 +297,23 @@ This will set the alignment of only this cell. Cell Alignment can be any of the 
 Yes, both are optional but you will need at least one of these options when using assemble-cell.
 
 <br><br>
-#### *assemble-mq-grid*
-Using assemble-mq-grid is for when you need to change the behavior of a grid in a media query. Instead of re-writing all the css for the grid we only override the parts that need changing.
-Assemble Grid leaves defining the media queries up to you. A great plugin for this is [PostCSS Custom Media].
+#### *assemble-grid-mq*
+Using assemble-grid-mq is for when you need to change the behavior of a grid in a media query. Instead of re-writing all the css for the grid we only override the parts that need changing.
+Assemble Grids leaves defining the media queries up to you. A great plugin for this is [PostCSS Custom Media].
 After you have defined a media query you can use it like this:
 
 ```css
 @media all and (max-width: 1000px) and (min-width: 700px) {
     .grid{
-        assemble-mq-grid: 1/2 20px;
+        assemble-grid-mq: 1/2 20px;
     }
 }
 ```
 
 This would change the grid to have 50% cell widths and 20px gutters within the given media query.
 
-Options for 'assemble-mq-grid' are as follows:<br>
-assemble-mq-grid: *Cell Width*, *Gutter Width*, *Grid Width/Center*, *Cell Alignment*
+Options for 'assemble-grid-mq' are as follows:<br>
+assemble-grid-mq: *Cell Width*, *Gutter Width*, *Grid Width/Center*, *Cell Alignment*
 
 ##### Cell Width (optional)
 This will set the width of all the cells in your grid. Cell Width can be any of the following:
@@ -336,34 +336,16 @@ This will set the alignment of each cell in the grid. Cell Alignment can be an o
 - center
 
 ##### Everything is optional?
-Yes, everything is optional but you will need at least one of these options when using assemble-mq-grid.
+Yes, everything is optional but you will need at least one of these options when using assemble-grid-mq.
 
-##### What about assemble-mq-cell?
-What if you want to modifiy a single cell in a media query? When modifing a single cell have to override everything that assemble-cell generates so there is no need for a assemble-mq-cell. Just use assemble-cell within a media query and you are good to go.
+##### What about assemble-grid-cell-mq?
+What if you want to modifiy a single cell in a media query? When modifing a single cell have to override everything that assemble-grid-cell generates so there is no need for a assemble-grid-cell-mq. Just use assemble-grid-cell within a media query and you are good to go.
 
 <br><br>
 #### Nesting
-Nesting just works. You can next as many grids as you want. With a lot of grid systems you have to nest to achieve what you can probably do with assemble-cell. Check to see if you can accomplish what you need with asseble-cell before you start nesting.
+Nesting just works. You can next as many grids as you want. With a lot of grid systems you have to nest to achieve what you can probably do with assemble-grid-cell. Check to see if you can accomplish what you need with asseble-grid-cell before you start nesting.
 To nest you just need to place another assemble-grid inside a single cell.
 
 <br><br>
 #### Extra Info
 While not a requirement it is recommended that when you are creating markup for your grids you only apply assemble-grid, assemble-cell, and assemble-mq-grid to a specific html tag. If you need to add style, such as background-color (or anything else), you should do that on a differnt tag withing your grid markup. This will help keep things organized and allow you to re-use your gird classes with out visual style getting in the way. Again, this is just advice. It is not required.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
