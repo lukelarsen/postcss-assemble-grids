@@ -139,6 +139,7 @@ body{
 
 .frame-cell--sidebar{
     flex: 0 0 350px;
+    max-width: 350px; /* For IE11/10 */
 }
 
 .grid{
@@ -154,6 +155,7 @@ body{
     display: flex;
     min-width: 0;
     flex: 0 0 25%;
+    max-width: 25%; /* For IE 10/11 */
     margin-bottom: 30px;
     padding-left: 30px;
 }
@@ -164,6 +166,7 @@ body{
     }
     .grid > *{
         flex: 0 0 100% !important;
+        max-width: 100% !important; /* For IE 10/11 */
         margin-bottom: 20px;
         padding-left: 20px;
     }
@@ -171,6 +174,7 @@ body{
 
 .grid__cell--half{
     flex: 0 0 50%;
+    max-width: 50%; /* For IE 10/11 */
     align-self: flex-end;
 }
 

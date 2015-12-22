@@ -156,11 +156,13 @@ module.exports = postcss.plugin('assemble-grid', function (options) {
                         );
                     } else if (calcPercent === undefined) {
                         newRuleChild.append(
-                            'flex: ' + '0 0 ' + valueArray[0] +';'
+                            'flex: ' + '0 0 ' + valueArray[0] +';' +
+                            'max-width: ' + valueArray[0] + '; /* For IE 10/11 */'
                         );
                     } else{
                         newRuleChild.append(
-                            'flex: ' + '0 0 ' + calcPercent +';'
+                            'flex: ' + '0 0 ' + calcPercent +';' +
+                            'max-width: ' + calcPercent + '; /* For IE 10/11 */'
                         );
                     }
 
@@ -217,6 +219,7 @@ module.exports = postcss.plugin('assemble-grid', function (options) {
                         return;
                     } else if (valueArray[0].indexOf('/') === -1) {
                         decl.cloneBefore({ prop: 'flex',  value: '0 0 ' + valueArray[0]});
+                        decl.cloneBefore({ prop: 'max-width',  value: valueArray[0]});
                     } else {
                         // Get decimal value from option 1.
                         var mathDone = eval(valueArray[0]);
@@ -226,6 +229,7 @@ module.exports = postcss.plugin('assemble-grid', function (options) {
                         calcPercent = percent;
 
                         decl.cloneBefore({ prop: 'flex',  value: '0 0 ' + calcPercent});
+                        decl.cloneBefore({ prop: 'max-width',  value: calcPercent}); // FOR IE
                     }
 
 
@@ -374,11 +378,13 @@ module.exports = postcss.plugin('assemble-grid', function (options) {
 
                     } else if (calcPercent === undefined) {
                         newRuleChild.append(
-                            'flex: ' + '0 0 ' + valueArray[0] +' !important;'
+                            'flex: ' + '0 0 ' + valueArray[0] +' !important;' +
+                            'max-width: ' + valueArray[0] + ' !important; /* For IE 10/11 */'
                         );
                     } else{
                         newRuleChild.append(
-                            'flex: ' + '0 0 ' + calcPercent +' !important;'
+                            'flex: ' + '0 0 ' + calcPercent +' !important;' +
+                            'max-width: ' + calcPercent + ' !important; /* For IE 10/11 */'
                         );
                     }
 
