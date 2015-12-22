@@ -131,6 +131,7 @@ body{
 }
 .frame > *{
     display: flex;
+    min-width: 0;
     flex: 1;
     margin-bottom: 30px;
     padding-left: 30px;
@@ -151,6 +152,7 @@ body{
 
 .grid > *{
     display: flex;
+    min-width: 0;
     flex: 0 0 25%;
     margin-bottom: 30px;
     padding-left: 30px;

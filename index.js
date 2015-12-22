@@ -145,6 +145,10 @@ module.exports = postcss.plugin('assemble-grid', function (options) {
                         'display: ' + 'flex;'
                     );
 
+                    newRuleChild.append(
+                        'min-width: ' + '0;'
+                    );
+
                     // Width set to fit or percent.
                     if (valueArray[0] == 'fit') {
                         newRuleChild.append(
