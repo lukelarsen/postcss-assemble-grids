@@ -1,6 +1,6 @@
 {
   "name": "postcss-assemble-grids",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A PostCSS plugin for easily creating flexbox grids.",
   "keywords": [
     "postcss",
