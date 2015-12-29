@@ -130,7 +130,6 @@ body{
     margin-left: -30px;
 }
 .frame > *{
-    display: flex;
     min-width: 0;
     flex: 1;
     margin-bottom: 30px;
@@ -152,7 +151,6 @@ body{
 }
 
 .grid > *{
-    display: flex;
     min-width: 0;
     flex: 0 0 25%;
     max-width: 25%; /* For IE 10/11 */

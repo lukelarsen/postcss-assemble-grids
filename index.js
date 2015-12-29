@@ -142,10 +142,6 @@ module.exports = postcss.plugin('assemble-grid', function (options) {
                     }).removeAll();
 
                     newRuleChild.append(
-                        'display: ' + 'flex;'
-                    );
-
-                    newRuleChild.append(
                         'min-width: ' + '0;'
                     );
 
