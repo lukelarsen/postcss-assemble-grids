@@ -2,7 +2,7 @@
 [PostCSS Custom Media]:    https://github.com/postcss/postcss-custom-media
 [Demo]:                    https://jsfiddle.net/lukelarsen/brf1xky7/
 
-# PostCSS Assemble Grid
+# PostCSS Assemble Grids
 
 <img align="right" width="135" height="95"
      title="Philosopher’s stone, logo of PostCSS"
@@ -199,11 +199,11 @@ npm install postcss-assemble-grids --save-dev
 ### Gulp
 ```js
 var postcss = require('gulp-postcss');
-var assembleGrid = require('postcss-assemble-grid');
+var assembleGrids = require('postcss-assemble-grids');
 
 gulp.task('css', function () {
     var processors = [
-        assembleGrid
+        assembleGrids
     ];
     return gulp.src('./src/*.css')
         .pipe(postcss(processors))
